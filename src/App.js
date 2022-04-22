@@ -1,10 +1,37 @@
 import React from 'react';
 import './App.css';
-// import { connect } from 'react-redux'
-// import { Route, Switch, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { getCurrentUser } from "./actions/currentUser.js"
+import NavBar from './components/NavBar.js'
+import Home from './components/Home.js'
+import Login from './components/Login.js'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
-function App() {
 
+class App extends React.Component {
+
+  componentDidMount() {
+    this.props.getCurrentUser()
+  }
+
+  render(){
+    const { loggedIn } = this.props
+    return (
+      <div className="App">
+        { loggedIn ? <NavBar organization={this.props.organization}/> : <Home/> }
+        <Switch>
+          <Route exact path='/login' component={Login}/>
+        </Switch>
+      </div>
+    );
+
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser
+  })
+}
+
+export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
