@@ -1,5 +1,7 @@
 # CenterPoint - Front End
 
+A React project inspired by regional business chambers of commerce and their related community activities.
+
 Backend Repository: https://github.com/LGmedia954/centerpoint-backend
 
 # How To Use This Application
