@@ -84,10 +84,9 @@ export const createOrganization = (orgData, history) => {
           dispatch(addOrganization(resp.data))
           // dispatch(resetOrganizationForm())
           history.push(`/organizations/${resp.data.id}`)
-
+          // show the Org
         }
       })
       .catch(console.log)
-
   }
 }

@@ -42,9 +42,16 @@ body {
 }
 
 .NavBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: block;
+  padding: 15px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #191970;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-right: 1px solid #FFFFFF;
 }
 
 .active {
@@ -75,4 +82,16 @@ a:hover {
 input[type=text] {
   border: 1px solid #000000;
   border-radius: 4px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #191970;
+  color: #00FFFF;
+  text-align: center;
+  padding: 5px;
+  border-top: 1px solid #FFFFFF;
 }
