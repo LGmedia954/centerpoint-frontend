@@ -1,10 +1,11 @@
 import React from 'react'
-import MyOrganizations from './MyOrganizations.js'
+
+// deciding what this is going to be
 
 const CenterStage = () => {
   return (
     <div className="CenterStage">
-      <MyOrganizations/>
+      
     </div>
   )
 }

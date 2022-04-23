@@ -6,8 +6,11 @@ import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Login from './components/Login.js'
 import Signup from './components/Signup.js'
-import { Route, Switch, withRouter } from 'react-router-dom'
-
+import MyOrganizations from './components/MyOrganizations.js'
+import BizCard from './components/BizCard.js'
+import Footer from './components/Footer.js'
+// import { Route, Switch, withRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
 
@@ -19,11 +22,15 @@ class App extends React.Component {
     const { loggedIn } = this.props
     return (
       <div className="App">
-        { loggedIn ? <NavBar organization={this.props.organization}/> : <Home/> }
-        <Switch>
-          <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
-          <Route exact path='/login' component={Login}/>
-        </Switch>
+        <Router>
+          { loggedIn ? <NavBar organization={this.props.organization}/> : <Home/> }
+          <NavBar />
+          <Switch>
+            <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
+            <Route exact path='/login' component={Login}/>
+          </Switch>
+          <Footer />
+        </Router>
       </div>
     );
 
@@ -36,4 +43,5 @@ const mapStateToProps = state => {
   })
 }
 
-export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
+// export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
+export default connect(mapStateToProps, { getCurrentUser })(App);
