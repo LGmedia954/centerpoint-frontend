@@ -6,10 +6,10 @@ import { signup } from "../actions/currentUser.js"
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
 
   const handleUserDataEntry = event => {
-    const { email, value } = event.target
+    const { name, value } = event.target
     const updatedFormInfo = {
       ...signupFormData,
-      [email]: value
+      [name]: value
     }
     updateSignupForm(updatedFormInfo)
   }
@@ -26,7 +26,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
       <input placeholder="title" value={signupFormData.title} name="title" type="text" onChange={handleUserDataEntry} /><br /><br />
       <input placeholder="email" value={signupFormData.email} name="email" type="text" onChange={handleUserDataEntry} /><br /><br />
       <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleUserDataEntry} /><br /><br />
-      <input type="submit" value="Sign Up"/>
+      <input className="ui inverted teal button" type="submit" value="Sign Up"/>
     </form>
   )
 }

@@ -52,8 +52,9 @@ body {
 }
 
 h1 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 35px;
-  color: white;
+  color: #00FFFF;
   text-shadow: 2px 2px #000000;
 }
 
@@ -63,6 +64,15 @@ h3 {
 }
 
 .baselink {
-  color: #00FFFF !important;
+  color: white;
   text-shadow: 1px 1px #000000;
+}
+
+a:hover { 
+  color: #00FFFF;
+}
+
+input[type=text] {
+  border: 1px solid #000000;
+  border-radius: 4px;
 }
