@@ -1,5 +1,6 @@
 import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
+import { getMyOrganizations, clearOrganizations } from "./myOrganizations.js"
 
 export const setCurrentUser = user => {
   return {
@@ -30,7 +31,7 @@ export const login = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          // dispatch(getMyOrganizations())
+          dispatch(getMyOrganizations())
           dispatch(resetLoginForm())
           history.push('/')
         }
@@ -58,7 +59,7 @@ export const signup = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          // dispatch(getMyOrganizations())
+          dispatch(getMyOrganizations())
           dispatch(resetSignupForm())
           history.push('/')
         }
@@ -70,7 +71,7 @@ export const signup = (credentials, history) => {
 export const logout = event => {
   return dispatch => {
     dispatch(clearCurrentUser())
-    // dispatch(clearOrganizations())
+    dispatch(clearOrganizations())
     return fetch('http://localhost:3000/api/v1/logout', {
       credentials: "include",
       method: "DELETE"
@@ -93,7 +94,7 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          // dispatch(getMyOrganizations())
+          dispatch(getMyOrganizations())
         }
       })
       .catch(console.log)

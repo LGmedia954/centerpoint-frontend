@@ -1,6 +1,6 @@
 # Specifications for the React Assessment
 
-[ ] The code is written in ES6 as much as possible.
+[X] The code is written in ES6 as much as possible.
 
 [X] Create-react-app was used to create your React app.
 
