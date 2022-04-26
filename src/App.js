@@ -8,6 +8,7 @@ import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import About from './components/About.js'
 import MyOrganizations from './components/MyOrganizations.js'
+import BizIndex from './components/BizIndex.js'
 import BizCard from './components/BizCard.js'
 import Footer from './components/Footer.js'
 // import { Route, Switch, withRouter } from 'react-router-dom'
@@ -29,6 +30,7 @@ class App extends React.Component {
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/mybiz' component={MyOrganizations}/>
+            <Route exact path='/organizations' component={BizIndex}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
@@ -36,8 +38,6 @@ class App extends React.Component {
               return <BizCard organization={organization} {...props}/>
             }
           }/>
-
-
           </Switch>
         </Router>
         <Footer />
@@ -49,7 +49,8 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    loggedIn: !!state.currentUser
+    loggedIn: !!state.currentUser,
+    organizations: state.myOrganizations
   })
 }
 

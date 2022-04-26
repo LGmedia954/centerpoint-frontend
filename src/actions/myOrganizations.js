@@ -1,3 +1,5 @@
+import { resetOrganizationForm } from './bizForm'
+
 export const setMyOrganizations = organizations => {
   return {
     type: "SET_MY_ORGANIZATIONS",
@@ -82,9 +84,66 @@ export const createOrganization = (orgData, history) => {
           alert(resp.error)
         } else {
           dispatch(addOrganization(resp.data))
-          // dispatch(resetOrganizationForm())
+          dispatch(resetOrganizationForm())
           history.push(`/organizations/${resp.data.id}`)
-          // show the Org
+          // show it CenterStage
+        }
+      })
+      .catch(console.log)
+  }
+}
+
+export const updateOrganization = (orgData, history) => {
+  return dispatch => {
+    const sendableOrgData = {
+      name: orgData.name,
+      address: orgData.address,
+      suite: orgData.suite,
+      city: orgData.city,
+      state: orgData.state,
+      zip: orgData.zip,
+      phone: orgData.phone,
+      mission: orgData.mission,
+      website: orgData.website,
+      category_id: orgData.categoryId,
+    }
+    return fetch(`http://localhost:3001/api/v1/organizations/${orgData.orgId}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(sendableOrgData)
+    })
+      .then(r => r.json())
+      .then(resp => {
+        if (resp.error) {
+          alert(resp.error)
+        } else {
+          dispatch(addOrganization(resp.data))
+          history.push(`/organizations/${resp.data.id}`)
+        }
+      })
+      .catch(console.log)
+  }
+}
+
+export const deleteOrganization = (organizationId, history) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/organizations/${organizationId}`, {
+      credentials: "include",
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(r => r.json())
+      .then(resp => {
+        if (resp.error) {
+          alert(resp.error)
+        } else {
+          dispatch(deleteOrganizationSuccess(organizationId))
+          history.push(`/organizations`)
         }
       })
       .catch(console.log)

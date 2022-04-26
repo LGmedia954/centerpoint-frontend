@@ -4,6 +4,7 @@ import currentUser from './currentUser'
 import loginForm from './loginForm'
 import myOrganizations from './myOrganizations'
 import signupForm from './signupForm'
+import organizations from './organizations'
 
 
 const rootReducer = combineReducers({
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   currentUser: currentUser,
   loginForm: loginForm,
   myOrganizations: myOrganizations,
-  signupForm: signupForm
+  signupForm: signupForm,
+  organizations: organizations
 
 });
 

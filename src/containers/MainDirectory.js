@@ -1,11 +1,11 @@
 // All Businesses
 import React from 'react'
-import AllOrganizations from './AllOrganizations.js'
+import BizIndex from '../components/BizIndex.js'
 
 const MainDirectory = () => {
   return (
     <div className="MainDirectory">
-      <AllOrganizations/>
+      <BizIndex />
     </div>
   )
 }

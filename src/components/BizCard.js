@@ -19,7 +19,7 @@ const BizCard = ({ organization }) => {
 
         <Link to={`/organizations/${organization.id}/edit`} className="ui inverted teal button">Edit this organization</Link>
       </div> :
-      <p>This is a Business Card with no organization!</p>
+      <p>This is a lonely Business Card with no organization!</p>
   )
 }
 

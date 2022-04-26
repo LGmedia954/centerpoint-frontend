@@ -5,7 +5,7 @@ import LongIsland from './LongIsland'
 
 const Home = () => (
   <div className="Home">
-    <div class="header">
+    <div className="header">
     <h1>CenterPoint Business Hub</h1>
     </div><br /><br /><br />
       <h3>
