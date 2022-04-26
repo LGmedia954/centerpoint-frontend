@@ -8,10 +8,13 @@ import Logout from './Logout'
 const NavBar = ({ currentUser, loggedIn }) => {
   return (
     <div className="NavBar">
-      <NavLink to="/about" exact activeClassName="active" >About</NavLink>
-      <NavLink to="/organizations" exact activeClassName="active" >My Organizations</NavLink>
-      <NavLink to="/organizations/new" exact activeClassName="active" >Add an Organization</NavLink>
-      <NavLink to="" exact activeClassName="active" >Business Directory</NavLink>
+    <h2>CenterPoint Business Hub</h2>
+      <NavLink to="" exact activeClassName="active" >Business Directory | </NavLink>
+      <NavLink to="/about" exact activeClassName="active" >About | </NavLink>
+      <NavLink to="/organizations" exact activeClassName="active" >My Organizations | </NavLink>
+      <NavLink to="/organizations/new" exact activeClassName="active" >Add an Organization </NavLink><br />
+      <NavLink to="/announcements" exact activeClassName="active" >Announcements | </NavLink>
+      <NavLink to="/announcements/new" exact activeClassName="active" >Add an Announcement | </NavLink>
       { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p><Logout/></> : null}
     </div>
   )

@@ -12,7 +12,7 @@ const MyOrganizations = props => {
 
 const mapStateToProps = state => {
   return {
-    trips: state.myOrganizations
+    organizations: state.myOrganizations
   }
 }
 

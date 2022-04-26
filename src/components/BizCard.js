@@ -17,7 +17,7 @@ const BizCard = ({ organization }) => {
         <br />
         <p>{organization.attributes.mission}</p>
 
-        <Link to={`/trips/${organization.id}/edit`} className="ui inverted teal button">Edit this organization</Link>
+        <Link to={`/organizations/${organization.id}/edit`} className="ui inverted teal button">Edit this organization</Link>
       </div> :
       <p>This is a Business Card with no organization!</p>
   )

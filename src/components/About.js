@@ -3,14 +3,11 @@ import React, { Component } from 'react';
 export class About extends Component {
   render() {
     return (
-      <div>
-        <h3>About CenterPoint</h3><br />
-        <h5>Our Mission:</h5>
-        <ul>
-          <li> To promote business and economic opportunities for the East Garden City community.</li>
-          <li> To be an advocate and resource for all member businesses that promote equality.</li>
-          <li> To promote revitalization with a unified approach by working with appropriate and related organizations.</li>
-        </ul>
+      <div className="parafix">
+        <h2>Our Mission:</h2>
+        <h3>&bull; To promote business and economic opportunities for the East Garden City community.</h3>
+        <h3>&bull; To be an advocate and resource for all member businesses that promote equality.</h3>
+        <h3>&bull; To promote revitalization with a unified approach by working with appropriate and related organizations.</h3>
       </div>
     );
   }

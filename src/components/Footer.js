@@ -4,7 +4,7 @@ export class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        &copy; 2022 Leslie G.
+        &copy; 2022 Leslie G &bull; CenterPoint Business Hub
       </footer>
     );
   }

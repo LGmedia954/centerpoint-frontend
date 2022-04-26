@@ -6,6 +6,83 @@ body {
   background-color: #708090;
 }
 
+.NavBar {
+  display: block;
+  padding: 15px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #191970;
+  color: #FFFFFF !important;
+  text-decoration: none;
+  border-bottom: 1px solid #FFFFFF;
+  /* box-shadow: 0 5px 5px -5px; */
+}
+
+.active {
+  color: #00FFFF;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 35px;
+  color: #00FFFF;
+  text-shadow: 2px 2px #000000;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #00FFFF;
+  text-shadow: 2px 2px #000000;
+}
+
+h3 {
+  color: white;
+  text-shadow: 1px 1px #000000;
+}
+
+.baselink {
+  color: white;
+  text-shadow: 1px 1px #000000;
+}
+
+a:hover { 
+  color: #00FFFF;
+}
+
+input[type=text] {
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #191970;
+  color: #00FFFF;
+  text-shadow: 1px 1px #000000;
+  font-size: 10px;
+  text-align: center;
+  padding: 5px;
+  border-top: 1px solid #FFFFFF;
+}
+
+.parafix {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -39,60 +116,4 @@ body {
   to {
     transform: rotate(360deg);
   }
-}
-
-.NavBar {
-  display: block;
-  padding: 15px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  background-color: #191970;
-  color: #FFFFFF;
-  text-decoration: none;
-  border-right: 1px solid #FFFFFF;
-}
-
-.active {
-  color: #00FFFF;
-}
-
-h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 35px;
-  color: #00FFFF;
-  text-shadow: 2px 2px #000000;
-}
-
-h3 {
-  color: white;
-  text-shadow: 1px 1px #000000;
-}
-
-.baselink {
-  color: white;
-  text-shadow: 1px 1px #000000;
-}
-
-a:hover { 
-  color: #00FFFF;
-}
-
-input[type=text] {
-  border: 1px solid #000000;
-  border-radius: 4px;
-}
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #191970;
-  color: #00FFFF;
-  font-size: 20px;
-  text-align: center;
-  padding: 5px;
-  border-top: 1px solid #FFFFFF;
 }

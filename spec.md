@@ -4,11 +4,11 @@
 
 [X] Create-react-app was used to create your React app.
 
-[ ] There are 2 container components.
+[X] There are 2 container components.
 
 [ ] There are 5 stateless components.
 
-[ ] There are 3 routes.
+[X] There are 3 routes.
 
 [ ] React-router is being used with proper RESTful routing.
 
