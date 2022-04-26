@@ -28,19 +28,24 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 35px;
   color: #00FFFF;
-  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px #708090;
 }
 
 h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   color: #00FFFF;
-  text-shadow: 2px 2px #000000;
+  text-shadow: 1.5px 1.5px #708090;
 }
 
 h3 {
   color: white;
   text-shadow: 1px 1px #000000;
+}
+
+.mission {
+  color: #00FFFF;
+  text-shadow: 2px 2px #000000;
 }
 
 .baselink {
@@ -64,11 +69,22 @@ input[type=text] {
   width: 100%;
   background-color: #191970;
   color: #00FFFF;
-  text-shadow: 1px 1px #000000;
+  text-shadow: 1px 1px #708090;
   font-size: 10px;
   text-align: center;
   padding: 5px;
   border-top: 1px solid #FFFFFF;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #191970;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid #FFFFFF;
 }
 
 .parafix {
@@ -79,6 +95,14 @@ input[type=text] {
   transform: translateY(-50%);
 }
 
+img {
+  width: 100%;
+  height: auto;
+  position:fixed;
+  bottom: 15px;
+  left: 0;
+  border-top: 1px solid #FFFFFF;
+}
 
 
 
