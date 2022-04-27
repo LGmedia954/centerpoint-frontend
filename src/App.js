@@ -30,8 +30,8 @@ class App extends React.Component {
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/mybiz' component={MyOrganizations}/>
-            <Route exact path='/organizations' component={BizIndex}/>
             <Route exact path='/about' component={About}/>
+            <Route exact path='/organizations' component={BizIndex}/>
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
               console.log(organization)

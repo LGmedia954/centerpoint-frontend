@@ -95,6 +95,14 @@ input[type=text] {
   transform: translateY(-50%);
 }
 
+.parafix2 {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 img {
   width: 100%;
   height: auto;
@@ -103,6 +111,7 @@ img {
   left: 0;
   border-top: 1px solid #FFFFFF;
 }
+
 
 
 

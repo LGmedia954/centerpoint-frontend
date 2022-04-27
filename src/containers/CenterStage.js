@@ -1,10 +1,10 @@
 // User Businesses
 import React from 'react'
-import MyOrganizations from './MyOrganizations.js'
+import MyOrganizations from '../components/MyOrganizations.js'
 
 const CenterStage = () => {
   return (
-    <div className="parafix">
+    <div className="parafix2">
       <div className="CenterStage">
         <MyOrganizations />
       </div>

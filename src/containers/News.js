@@ -1,10 +1,12 @@
 import React from 'react'
-import Announcements from './Announcements.js'
+import Announcements from '../components/Announcements.js'
 
 const News = () => {
   return (
-    <div className="News">
-      <Announcements />
+    <div className="parafix2">
+      <div className="News">
+        <Announcements />
+      </div>
     </div>
   )
 }
