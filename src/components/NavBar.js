@@ -8,7 +8,7 @@ const NavBar = ({ currentUser, loggedIn }) => {
   return (
     <div className="NavBar">
     <h2>CenterPoint Business Hub</h2>
-      <NavLink to="/organizations" exact activeClassName="active" >Business Directory | </NavLink>
+      <NavLink to="/organizations/index" exact activeClassName="active" >Business Directory | </NavLink>
       <NavLink to="/about" exact activeClassName="active" >About | </NavLink>
       <NavLink to="/organizations/mybiz" exact activeClassName="active" >My Organizations | </NavLink>
       <NavLink to="/organizations/new" exact activeClassName="active" >Add an Organization </NavLink><br />

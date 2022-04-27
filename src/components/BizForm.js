@@ -7,7 +7,7 @@ const BizForm = ({ formData, updateOrganizationForm, userId, organization, handl
   const { name, address, suite, city, state, zip, phone, website, mission } = formData
 
   const handleChange = event => {
-    console.log("trigger Handle change")
+    console.log("trigger handle change")
     const { name, value } = event.target
     updateOrganizationForm(name, value)
   }

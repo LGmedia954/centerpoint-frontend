@@ -1,19 +1,14 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import BizCard from './BizCard'
 
-const BizIndex = props => {
-  const bizList = props.organizations.length > 0 ?
-    props.organizations.map(org => (<p key={org.id}><Link to={`/organizations/${org.id}`}>{org.attributes.name}</Link></p>)) :
-    null
+const BizIndex = ({ organizations }) => {
 
-  return bizList
+  const bizList = organizations.map(org => <BizCard organization={org} key={org.id}/>)
+  return (
+    <div className="parafix">
+      { bizList }
+    </div>
+  )
 }
 
-const mapStateToProps = state => {
-  return {
-    organizations: state.organizations
-  }
-}
-
-export default connect(mapStateToProps)(BizIndex)
+export default BizIndex;
