@@ -1,9 +1,9 @@
 import React from 'react';
-import BizForm from './BizForm'
+import OrganizationForm from './OrganizationForm'
 import { createOrganization } from '../actions/myOrganizations'
 import { connect } from 'react-redux'
 
-const NewBizFormWrap = ({ history, createOrganization }) => {
+const NewOrgFormWrap = ({ history, createOrganization }) => {
 
   const handleSubmit = (formData, userId) => {
     createOrganization({
@@ -11,7 +11,7 @@ const NewBizFormWrap = ({ history, createOrganization }) => {
       userId
     }, history)
   }
-  return  <BizForm history={history} handleSubmit={handleSubmit} />
+  return  <OrganizationForm history={history} handleSubmit={handleSubmit} />
 };
 
-export default connect(null, { createOrganization })(NewBizFormWrap);
+export default connect(null, { createOrganization })(NewOrgFormWrap);

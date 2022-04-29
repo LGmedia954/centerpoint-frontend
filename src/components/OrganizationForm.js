@@ -1,8 +1,8 @@
 import React from 'react';
-import { updateOrganizationForm } from '../actions/bizForm'
+import { updateOrganizationForm } from '../actions/organizationForm.js'
 import { connect } from 'react-redux'
 
-const BizForm = ({ formData, updateOrganizationForm, userId, organization, handleSubmit, editMode }) => {
+const OrganizationForm = ({ formData, updateOrganizationForm, userId, organization, handleSubmit, editMode }) => {
 
   const { name, address, suite, city, state, zip, phone, website, mission } = formData
 
@@ -33,9 +33,9 @@ const BizForm = ({ formData, updateOrganizationForm, userId, organization, handl
   const mapStateToProps = state => {
     const userId = state.currentUser ? state.currentUser.id : ""
     return {
-      formData: state.bizForm,
+      formData: state.organizationForm,
       userId
     }
   }
   
-  export default connect(mapStateToProps, { updateOrganizationForm })(BizForm);
+  export default connect(mapStateToProps, { updateOrganizationForm })(OrganizationForm);

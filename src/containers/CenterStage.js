@@ -4,7 +4,7 @@ import MyOrganizations from '../components/MyOrganizations.js'
 
 const CenterStage = () => {
   return (
-    <div className="parafix2">
+    <div className="parafix">
       <MyOrganizations />
     </div>
   )

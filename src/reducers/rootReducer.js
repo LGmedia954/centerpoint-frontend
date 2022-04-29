@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import bizForm from './bizForm'
+import organizationForm from './organizationForm'
 import currentUser from './currentUser'
 import loginForm from './loginForm'
 import myOrganizations from './myOrganizations'
@@ -9,7 +9,7 @@ import organizations from './organizations'
 
 const rootReducer = combineReducers({
 
-  bizForm: bizForm,
+  organizationForm: organizationForm,
   currentUser: currentUser,
   loginForm: loginForm,
   myOrganizations: myOrganizations,

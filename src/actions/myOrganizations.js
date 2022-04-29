@@ -1,4 +1,4 @@
-import { resetOrganizationForm } from './bizForm'
+import { resetOrganizationForm } from './organizationForm'
 
 export const setMyOrganizations = organizations => {
   return {
@@ -55,20 +55,20 @@ export const getMyOrganizations = () => {
   }
 }
 
-export const createOrganization = (orgData, history) => {
+export const createOrganization = (organizationData, history) => {
   return dispatch => {
-    const sendableOrgData = {
-      name: orgData.name,
-      address: orgData.address,
-      suite: orgData.suite,
-      city: orgData.city,
-      state: orgData.state,
-      zip: orgData.zip,
-      phone: orgData.phone,
-      mission: orgData.mission,
-      website: orgData.website,
-      category_id: orgData.categoryId,
-      user_id: orgData.userId
+    const sendableOrganizationData = {
+      name: organizationData.name,
+      address: organizationData.address,
+      suite: organizationData.suite,
+      city: organizationData.city,
+      state: organizationData.state,
+      zip: organizationData.zip,
+      phone: organizationData.phone,
+      mission: organizationData.mission,
+      website: organizationData.website,
+      category_id: organizationData.categoryId,
+      user_id: organizationData.userId
     }
     return fetch("http://localhost:3001/api/v1/organizations", {
       credentials: "include",
@@ -76,7 +76,7 @@ export const createOrganization = (orgData, history) => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(sendableOrgData)
+      body: JSON.stringify(sendableOrganizationData)
     })
       .then(r => r.json())
       .then(resp => {
@@ -93,27 +93,27 @@ export const createOrganization = (orgData, history) => {
   }
 }
 
-export const updateOrganization = (orgData, history) => {
+export const updateOrganization = (organizationData, history) => {
   return dispatch => {
-    const sendableOrgData = {
-      name: orgData.name,
-      address: orgData.address,
-      suite: orgData.suite,
-      city: orgData.city,
-      state: orgData.state,
-      zip: orgData.zip,
-      phone: orgData.phone,
-      mission: orgData.mission,
-      website: orgData.website,
-      category_id: orgData.categoryId,
+    const sendableOrganizationData = {
+      name: organizationData.name,
+      address: organizationData.address,
+      suite: organizationData.suite,
+      city: organizationData.city,
+      state: organizationData.state,
+      zip: organizationData.zip,
+      phone: organizationData.phone,
+      mission: organizationData.mission,
+      website: organizationData.website,
+      category_id: organizationData.categoryId,
     }
-    return fetch(`http://localhost:3001/api/v1/organizations/${orgData.orgId}`, {
+    return fetch(`http://localhost:3001/api/v1/organizations/${organizationData.orgId}`, {
       credentials: "include",
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(sendableOrgData)
+      body: JSON.stringify(sendableOrganizationData)
     })
       .then(r => r.json())
       .then(resp => {

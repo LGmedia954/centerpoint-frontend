@@ -11,8 +11,8 @@ import MyOrganizations from './components/MyOrganizations.js'
 import MainDirectory from './containers/MainDirectory'
 import BizIndex from './components/BizIndex.js'
 import BizCard from './components/BizCard.js'
-import NewBizFormWrap from './components/NewBizFormWrap.js'
-import EditBizFormWrap from './components/EditBizFormWrap.js'
+import NewOrgFormWrap from './components/NewOrgFormWrap.js'
+import EditOrgFormWrap from './components/EditOrgFormWrap.js'
 import About from './components/About.js'
 import Contact from './components/Contact.js'
 import Footer from './components/Footer.js'
@@ -46,7 +46,7 @@ class App extends React.Component {
           }/>
           <Route exact path='/organizations/:id/edit' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
-              return <EditBizFormWrap organization={organization} {...props}/>
+              return <EditOrgFormWrap organization={organization} {...props}/>
             }
           }/>
           </Switch>

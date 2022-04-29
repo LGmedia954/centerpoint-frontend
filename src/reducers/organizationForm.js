@@ -10,7 +10,7 @@ const initialState = {
   mission: "",
 }
 
-export default (state=initialState, action) => {
+const exportOrganizationForm = (state=initialState, action) => {
   switch (action.type) {
     case "UPDATE_NEW_ORGANIZATION_FORM":
       const returnVal = {
@@ -25,7 +25,7 @@ export default (state=initialState, action) => {
     default:
       return state
   }
-}
+}; exportOrganizationForm();
 
 
 

@@ -5,7 +5,7 @@ import loginForm from './reducers/loginForm'
 import myOrganizations from './reducers/myOrganizations'
 import organizations from './reducers/organizations'
 import signupForm from './reducers/signupForm'
-import bizForm from './reducers/bizForm'
+import organizationForm from './reducers/organizationForm'
 import thunk from 'redux-thunk'
 
 const reducer = combineReducers({
@@ -14,7 +14,7 @@ const reducer = combineReducers({
   myOrganizations,
   organizations,
   signupForm,
-  bizForm
+  organizationForm
 
 })
 
