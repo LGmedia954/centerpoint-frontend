@@ -6,12 +6,15 @@ import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Login from './components/Login.js'
 import Signup from './components/Signup.js'
-import About from './components/About.js'
 import CenterStage from './containers/CenterStage'
 import MyOrganizations from './components/MyOrganizations.js'
 import MainDirectory from './containers/MainDirectory'
 import BizIndex from './components/BizIndex.js'
 import BizCard from './components/BizCard.js'
+import NewBizFormWrap from './components/NewBizFormWrap.js'
+import EditBizFormWrap from './components/EditBizFormWrap.js'
+import About from './components/About.js'
+import Contact from './components/Contact.js'
 import Footer from './components/Footer.js'
 // import { Route, Switch, withRouter } from 'react-router-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -33,11 +36,17 @@ class App extends React.Component {
             <Route exact path='/login' component={Login}/>
             <Route exact path='/mybiz' component={MyOrganizations}/>
             <Route exact path='/about' component={About}/>
+            <Route exact path='/contact' component={Contact}/>
             <Route exact path='/organizations' component={BizIndex}/>
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
               console.log(organization)
               return <BizCard organization={organization} {...props}/>
+            }
+          }/>
+          <Route exact path='/organizations/:id/edit' render={props => {
+              const organization = organizations.find(organization => organization.id === props.match.params.id)
+              return <EditBizFormWrap organization={organization} {...props}/>
             }
           }/>
           </Switch>

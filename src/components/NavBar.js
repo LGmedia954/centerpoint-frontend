@@ -14,6 +14,7 @@ const NavBar = ({ currentUser, loggedIn }) => {
       <NavLink to="/organizations/new" exact activeClassName="active" >Add an Organization </NavLink><br />
       <NavLink to="/announcements" exact activeClassName="active" >Announcements | </NavLink>
       <NavLink to="/announcements/new" exact activeClassName="active" >Add an Announcement | </NavLink>
+      <NavLink to="/contact" exact activeClassName="active" >Contact | </NavLink>
       { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p><Logout/></> : null}
     </div>
   )

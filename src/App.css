@@ -87,7 +87,7 @@ input[type=text] {
   border-bottom: 1px solid #FFFFFF;
 }
 
-.parafix {
+.paracenter {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -95,7 +95,7 @@ input[type=text] {
   transform: translateY(-50%);
 }
 
-.parafix2 {
+.parafix {
   margin: 0;
   position: absolute;
   top: 40%;
