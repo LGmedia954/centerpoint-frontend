@@ -37,10 +37,11 @@ class App extends React.Component {
             <Route exact path='/mybiz' component={MyOrganizations}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/contact' component={Contact}/>
+            <Route exact path='/organizations/new' component={NewOrgFormWrap}/>
             <Route exact path='/organizations' component={BizIndex}/>
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
-              console.log(organization)
+              // console.log(organization)
               return <BizCard organization={organization} {...props}/>
             }
           }/>

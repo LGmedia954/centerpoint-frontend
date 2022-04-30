@@ -6,7 +6,7 @@ const initialState = {
   password: "",
 }
 
-const exportSignupForm = (state = initialState, action) => {
+const signupFormReducer = (state = initialState, action) => {
   switch (action.type) {
     case "UPDATE_SIGNUP_FORM":
       return action.formData
@@ -15,4 +15,21 @@ const exportSignupForm = (state = initialState, action) => {
     default:
       return state
   }
-}; exportSignupForm();
+};
+
+export default signupFormReducer;
+
+
+
+
+
+// export default (state = initialState, action) => {
+//   switch (action.type) {
+//     case "UPDATE_SIGNUP_FORM":
+//       return action.formData
+//     case "RESET_SIGNUP_FORM":
+//       return initialState
+//     default:
+//       return state
+//   }
+// }

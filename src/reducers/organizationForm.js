@@ -10,7 +10,7 @@ const initialState = {
   mission: "",
 }
 
-const exportOrganizationForm = (state = initialState, action) => {
+const organizationFormReducer = (state = initialState, action) => {
   switch (action.type) {
     case "UPDATE_NEW_ORGANIZATION_FORM":
       const returnVal = {
@@ -25,9 +25,27 @@ const exportOrganizationForm = (state = initialState, action) => {
     default:
       return state
   }
-}; exportOrganizationForm();
+};
+
+export default organizationFormReducer;
 
 
 
 
 
+// export default (state = initialState, action) => {
+//   switch (action.type) {
+//     case "UPDATE_NEW_ORGANIZATION_FORM":
+//       const returnVal = {
+//         ...state,
+//         [action.formData.name]: action.formData.value
+//       }
+//       return returnVal
+//     case "RESET_NEW_ORGANIZATION_FORM":
+//       return initialState
+//     case "SET_FORM_DATA_FOR_EDIT":
+//       return action.organizationFormData
+//     default:
+//       return state
+//   }
+// }

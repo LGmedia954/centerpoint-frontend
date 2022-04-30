@@ -13,10 +13,12 @@ const OrganizationForm = ({ formData, updateOrganizationForm, userId, organizati
   }
 
   return (
-    <form onSubmit={event => {
+    <form className="paracenter" 
+      onSubmit={event => {
       event.preventDefault()
       handleSubmit(formData)
     }}>
+      <br /><br />
       <input placeholder="name" name="name" onChange={handleChange} value={name}/><br/>
       <input placeholder="address" name="address" onChange={handleChange} value={address}/><br/>
       <input placeholder="suite" name="suite" onChange={handleChange} value={suite}/><br/>
@@ -25,7 +27,7 @@ const OrganizationForm = ({ formData, updateOrganizationForm, userId, organizati
       <input placeholder="zip" name="zip" onChange={handleChange} value={zip}/><br/>
       <input placeholder="phone" name="phone" onChange={handleChange} value={phone}/><br/>
       <input placeholder="website" name="website" onChange={handleChange}value={website}/><br/>
-      <input placeholder="mission" name="mission" onChange={handleChange} value={mission}/><br/>
+      <input placeholder="mission" name="mission" onChange={handleChange} value={mission}/><br/><br/>
       <input className="ui inverted teal button" type="submit" value={editMode ? "Update Organization" : "Create Organization" }/>
     </form>
   )};

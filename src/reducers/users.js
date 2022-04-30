@@ -1,6 +1,19 @@
-const exportUsers = (state = [], action) => {
+const usersReducer = (state = [], action) => {
   switch (action.type) {
     default:
       return state
   }
-}; exportUsers();
+};
+
+export default usersReducer;
+
+
+
+
+
+// export default (state = [], action) => {
+//   switch (action.type) {
+//     default:
+//       return state
+//   }
+// }

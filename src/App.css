@@ -89,7 +89,7 @@ input[type=text] {
 
 .paracenter {
   margin: 0;
-  position: absolute !important;
+  position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);

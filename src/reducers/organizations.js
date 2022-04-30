@@ -1,10 +1,25 @@
 const initialState = []
 
-const exportOrganizations = (state = initialState, action) => {
+const organizationsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "INDEX_ORGANIZATIONS":
       return action.organizations
     default:
       return state
   }
-}; exportOrganizations();
+};
+
+export default organizationsReducer;
+
+
+
+
+
+// export default (state = initialState, action) => {
+//   switch (action.type) {
+//     case "INDEX_ORGANIZATIONS":
+//       return action.organizations
+//     default:
+//       return state
+//   }
+// }
