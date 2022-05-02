@@ -4,7 +4,7 @@ export class Contact extends Component {
   render() {
     return (
       <div className="paracenter">
-        <h2 className="mission">Contact Us:</h2>
+        <h2 className="oomph">Contact Us:</h2>
         <h3>CenterPoint Business Hub</h3>
         <h3>900 Stewart Avenue</h3>
         <h3>7th Floor</h3>

@@ -43,7 +43,7 @@ h3 {
   text-shadow: 1px 1px #000000;
 }
 
-.mission {
+.oomph {
   color: #00FFFF;
   text-shadow: 2px 2px #000000;
 }
@@ -88,11 +88,19 @@ input[type=text] {
 }
 
 .paracenter {
-  margin: 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 33%;
+
+  /* margin: 0;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
 }
 
 .parafix {
