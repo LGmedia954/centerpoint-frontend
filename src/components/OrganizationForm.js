@@ -18,7 +18,7 @@ const OrganizationForm = ({ formData, updateOrganizationForm, userId, organizati
       event.preventDefault()
       handleSubmit(formData)
     }}>
-      <br /><br />
+      <h2 className="oomph">Organization Form</h2>
       <input placeholder="name" name="name" onChange={handleChange} value={name}/><br/>
       <input placeholder="address" name="address" onChange={handleChange} value={address}/><br/>
       <input placeholder="suite" name="suite" onChange={handleChange} value={suite}/><br/>

@@ -15,11 +15,12 @@ const myOrganizations = (state = initialState, action) => {
     default:
       return state
   }
-};
+}
 
 export default myOrganizations;
 
 
+// = (state = initialState, action) => {
 // = (state = null, action) => {
 
 

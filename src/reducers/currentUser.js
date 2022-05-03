@@ -7,7 +7,7 @@ const currentUser = (state = null, action) => {
     default:
       return state
   }
-};
+}
 
 export default currentUser;
 

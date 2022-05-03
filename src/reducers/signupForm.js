@@ -15,7 +15,7 @@ const signupForm = (state = initialState, action) => {
     default:
       return state
   }
-};
+}
 
 export default signupForm;
 

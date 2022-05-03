@@ -36,7 +36,7 @@ export const updateOrganizationSuccess = organization => {
 
 export const getMyOrganizations = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/mybiz", {
+    return fetch("http://localhost:3000/api/v1/user/organizations/mybiz", {
       credentials: "include",
       method: "GET",
       headers: {

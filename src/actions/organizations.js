@@ -7,7 +7,7 @@ export const allOrganizations = organizations => {
 
 export const fetchOrganizations = () => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/organizations", {
+    return fetch("http://localhost:3000/api/v1/organizations/index", {
       credentials: "include",
       method: "GET",
       headers: {

@@ -1,6 +1,7 @@
 import React from 'react';
-import './App.css';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+// import { Route, Switch, withRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { getCurrentUser } from "./actions/currentUser.js"
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
@@ -16,8 +17,7 @@ import EditOrgFormWrap from './components/EditOrgFormWrap.js'
 import About from './components/About.js'
 import Contact from './components/Contact.js'
 import Footer from './components/Footer.js'
-// import { Route, Switch, withRouter } from 'react-router-dom'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 class App extends React.Component {
 
@@ -38,14 +38,14 @@ class App extends React.Component {
             <Route exact path='/about' component={About}/>
             <Route exact path='/contact' component={Contact}/>
             <Route exact path='/organizations/new' component={NewOrgFormWrap}/>
-            <Route exact path='/organizations' component={BizIndex}/>
+            <Route exact path='/organizations/index' component={BizIndex}/>
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
               // console.log(organization)
               return <BizCard organization={organization} {...props}/>
             }
           }/>
-          <Route exact path='/organizations/:id/edit' render={props => {
+            <Route exact path='/organizations/:id/edit' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
               return <EditOrgFormWrap organization={organization} {...props}/>
             }

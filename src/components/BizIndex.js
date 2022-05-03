@@ -3,12 +3,19 @@ import BizCard from './BizCard'
 
 const BizIndex = ({ organizations }) => {
 
-  const bizList = organizations.map(org => <BizCard organization={org} key={org.id}/>)
-  return (
-    <div className="parafix">
-      { bizList }
+  return(
+    <div className="paracenter">
+      {organizations.map(organization =>
+        <BizCard
+          key={organization.id}
+          id={organization.id}
+          name={organization.name}
+          phone={organization.phone}
+          website={organization.attributes.website}
+        />
+      )}
     </div>
   )
 }
 
-export default BizIndex;
+export default BizIndex
