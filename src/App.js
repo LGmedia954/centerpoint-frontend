@@ -34,7 +34,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
             <Route exact path='/login' component={Login}/>
-            <Route exact path='/mybiz' component={MyOrganizations}/>
+            <Route exact path='/organizations/mybiz' component={MyOrganizations}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/contact' component={Contact}/>
             <Route exact path='/organizations/new' component={NewOrgFormWrap}/>
@@ -55,7 +55,6 @@ class App extends React.Component {
         <Footer />
       </div>
     );
-
   }
 }
 

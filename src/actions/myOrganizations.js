@@ -36,7 +36,7 @@ export const updateOrganizationSuccess = organization => {
 
 export const getMyOrganizations = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/user/organizations/mybiz", {
+    return fetch("http://localhost:3000/api/v1/mybiz", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -120,7 +120,7 @@ export const updateOrganization = (organizationData, history) => {
         if (resp.error) {
           alert(resp.error)
         } else {
-          dispatch(addOrganization(resp.data))
+          dispatch(updateOrganizationSuccess(resp.data))
           history.push(`/organizations/${resp.data.id}`)
         }
       })

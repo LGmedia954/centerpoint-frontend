@@ -1,10 +1,13 @@
 import React from 'react'
 import Announcements from '../components/Announcements.js'
+// import Modal from '../components/Modal';
 
 const News = () => {
   return (
-    <div className="parafix">
+    <div className="containers">
       <Announcements />
+
+      {/* <Modal /> */}
     </div>
   )
 }

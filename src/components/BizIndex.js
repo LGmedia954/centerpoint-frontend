@@ -1,21 +1,31 @@
 import React from 'react'
-import BizCard from './BizCard'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 const BizIndex = ({ organizations }) => {
-
+  // console.log(props.organizations);
   return(
     <div className="paracenter">
-      {organizations.map(organization =>
-        <BizCard
-          key={organization.id}
-          id={organization.id}
-          name={organization.name}
-          phone={organization.phone}
-          website={organization.attributes.website}
-        />
-      )}
+      <h2 className="oomph">Organizations</h2>
+      {
+        organizations.map(organization => {
+          return(
+						<div className='ui raised very padded text container segment'
+							key={organization.id}
+			      >
+              <Link to={`/${organization.name}`} className='ui header'>{organization.name}</Link>
+			      </div>
+					)
+				})
+			}
     </div>
   )
 }
 
-export default BizIndex
+const mapStateToProps = state => {
+	return {
+		organizations: state.organizations
+	}
+};
+
+export default connect(mapStateToProps)(BizIndex);

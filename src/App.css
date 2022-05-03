@@ -103,7 +103,7 @@ input[type=text] {
   transform: translateY(-50%); */
 }
 
-.parafix {
+.containers {
   margin: 0;
   position: absolute;
   top: 40%;
