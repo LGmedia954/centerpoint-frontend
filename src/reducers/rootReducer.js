@@ -16,6 +16,6 @@ const rootReducer = combineReducers({
   signupForm: signupForm,
   organizations: organizations
 
-}); 
+});
 
 export default rootReducer

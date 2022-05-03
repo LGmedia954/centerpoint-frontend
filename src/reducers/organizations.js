@@ -1,6 +1,6 @@
 const initialState = []
 
-const organizationsReducer = (state = initialState, action) => {
+const organizations = (state = initialState, action) => {
   switch (action.type) {
     case "INDEX_ORGANIZATIONS":
       return action.organizations
@@ -9,7 +9,7 @@ const organizationsReducer = (state = initialState, action) => {
   }
 };
 
-export default organizationsReducer;
+export default organizations;
 
 
 

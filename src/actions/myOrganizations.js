@@ -36,7 +36,7 @@ export const updateOrganizationSuccess = organization => {
 
 export const getMyOrganizations = () => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/organizations", {
+    return fetch("http://localhost:3000/api/v1/mybiz", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -70,7 +70,7 @@ export const createOrganization = (organizationData, history) => {
       category_id: organizationData.categoryId,
       user_id: organizationData.userId
     }
-    return fetch("http://localhost:3001/api/v1/organizations", {
+    return fetch("http://localhost:3000/api/v1/organizations", {
       credentials: "include",
       method: "POST",
       headers: {
@@ -107,7 +107,7 @@ export const updateOrganization = (organizationData, history) => {
       website: organizationData.website,
       category_id: organizationData.categoryId,
     }
-    return fetch(`http://localhost:3001/api/v1/organizations/${organizationData.orgId}`, {
+    return fetch(`http://localhost:3000/api/v1/organizations/${organizationData.orgId}`, {
       credentials: "include",
       method: "PATCH",
       headers: {
@@ -130,7 +130,7 @@ export const updateOrganization = (organizationData, history) => {
 
 export const deleteOrganization = (organizationId, history) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/organizations/${organizationId}`, {
+    return fetch(`http://localhost:3000/api/v1/organizations/${organizationId}`, {
       credentials: "include",
       method: "DELETE",
       headers: {

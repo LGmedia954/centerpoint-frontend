@@ -10,7 +10,7 @@ const initialState = {
   mission: "",
 }
 
-const organizationFormReducer = (state = initialState, action) => {
+const organizationForm = (state = initialState, action) => {
   switch (action.type) {
     case "UPDATE_NEW_ORGANIZATION_FORM":
       const returnVal = {
@@ -27,7 +27,7 @@ const organizationFormReducer = (state = initialState, action) => {
   }
 };
 
-export default organizationFormReducer;
+export default organizationForm;
 
 
 

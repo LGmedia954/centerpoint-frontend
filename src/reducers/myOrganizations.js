@@ -1,6 +1,6 @@
 const initialState = []
 
-const myOrganizationsReducer = (state = initialState, action) => {
+const myOrganizations = (state = initialState, action) => {
   switch (action.type) {
     case "SET_MY_ORGANIZATIONS":
       return action.organizations
@@ -17,7 +17,7 @@ const myOrganizationsReducer = (state = initialState, action) => {
   }
 };
 
-export default myOrganizationsReducer;
+export default myOrganizations;
 
 
 // = (state = null, action) => {
