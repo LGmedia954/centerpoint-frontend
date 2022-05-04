@@ -1,8 +1,8 @@
-const initialState = []
+// const initialState = []
 
-// const initialState = {
-//   organizations: []
-// }
+const initialState = {
+  organizations: []
+}
 
 const myOrganizations = (state = initialState, action) => {
   switch (action.type) {

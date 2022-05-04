@@ -41,7 +41,7 @@ class App extends React.Component {
             <Route exact path='/organizations/index' component={BizIndex}/>
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
-              // console.log(organization)
+              console.log(organization)
               return <BizCard organization={organization} {...props}/>
             }
           }/>

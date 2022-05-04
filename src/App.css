@@ -6,7 +6,7 @@ body {
   background-color: #708090;
 }
 
-.NavBar {
+.nav {
   display: block;
   padding: 15px;
   position: fixed;

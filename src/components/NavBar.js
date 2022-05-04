@@ -6,7 +6,7 @@ import Logout from './Logout'
 
 const NavBar = ({ currentUser, loggedIn }) => {
   return (
-    <div className="NavBar">
+    <div className="nav">
     <h2>CenterPoint Business Hub</h2>
       <NavLink to="/organizations/index" exact activeClassName="active" >Business Directory | </NavLink>
       <NavLink to="/about" exact activeClassName="active" >About | </NavLink>
