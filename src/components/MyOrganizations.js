@@ -8,7 +8,7 @@ const MyOrganizations = props => {
     null
 
   return bizCards
-}
+};
 
 const mapStateToProps = state => {
   return {
@@ -16,4 +16,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(MyOrganizations)
+export default connect((mapStateToProps)(MyOrganizations));

@@ -36,4 +36,4 @@ class EditOrgFormWrap extends React.Component {
   }
 };
 
-export default connect(null, { updateOrganization, setFormDataForEdit, resetOrganizationForm, deleteOrganization })(EditOrgFormWrap);
+export default connect((null, { updateOrganization, setFormDataForEdit, resetOrganizationForm, deleteOrganization })(EditOrgFormWrap));

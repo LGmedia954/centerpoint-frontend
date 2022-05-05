@@ -4,7 +4,7 @@ import Announcements from '../components/Announcements.js'
 
 const News = () => {
   return (
-    <div className="containers">
+    <div className="containrz">
       <Announcements />
 
       {/* <Modal /> */}

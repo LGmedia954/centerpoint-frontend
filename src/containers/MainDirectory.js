@@ -4,7 +4,7 @@ import BizIndex from '../components/BizIndex.js'
 
 const MainDirectory = () => {
   return (
-    <div className="containers">
+    <div className="containrz">
       <BizIndex />
     </div>
   )

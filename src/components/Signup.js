@@ -29,7 +29,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
       <input className="ui inverted teal button" type="submit" value="Sign Up"/>
     </form>
   )
-}
+};
 
 const mapStateToProps = state => {
   return {
@@ -37,4 +37,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateSignupForm, signup } )(Signup)
+export default connect((mapStateToProps, { updateSignupForm, signup })(Signup));

@@ -10,8 +10,8 @@ export class Contact extends Component {
         <h3>7th Floor</h3>
         <h3>Garden City, New York 11530</h3>
       </div>
-    );
+    )
   }
-}
+};
 
 export default Contact;

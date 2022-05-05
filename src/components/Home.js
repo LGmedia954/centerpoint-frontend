@@ -13,7 +13,6 @@ const Home = () => (
       </h3><br />
       <LongIsland />
     </div>
-    
 
 );
 

@@ -18,7 +18,7 @@ const NavBar = ({ currentUser, loggedIn }) => {
       { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p><Logout/></> : null}
     </div>
   )
-}
+};
 
 const mapStateToProps = ({ currentUser }) => {
   return {
@@ -27,4 +27,4 @@ const mapStateToProps = ({ currentUser }) => {
   }
 }
 
-export default connect(mapStateToProps)(NavBar)
+export default connect((mapStateToProps)(NavBar));

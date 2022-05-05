@@ -12,6 +12,6 @@ const Modal = (props) => {
     document.querySelector('#modal')
   )
 
-}
+};
 
 export default Modal;

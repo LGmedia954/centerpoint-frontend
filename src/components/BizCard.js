@@ -21,6 +21,6 @@ const BizCard = ({ organization }) => {
       </div> :
       <p>This is a lonely Business Card!</p>
   )
-}
+};
 
-export default BizCard
+export default BizCard;
