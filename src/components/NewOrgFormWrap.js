@@ -14,4 +14,4 @@ const NewOrgFormWrap = ({ history, createOrganization }) => {
   return  <OrganizationForm history={history} handleSubmit={handleSubmit} />
 };
 
-export default connect((null, { createOrganization })(NewOrgFormWrap));
+export default connect(null, { createOrganization })(NewOrgFormWrap);

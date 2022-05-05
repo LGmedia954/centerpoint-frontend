@@ -38,6 +38,6 @@ const OrganizationForm = ({ formData, updateOrganizationForm, userId, organizati
       formData: state.organizationForm,
       userId
     }
-  }
-  
-  export default connect((mapStateToProps, { updateOrganizationForm })(OrganizationForm));
+  };
+
+  export default connect(mapStateToProps, { updateOrganizationForm })(OrganizationForm);

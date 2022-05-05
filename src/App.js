@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { Route, Switch, withRouter } from 'react-router-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { getCurrentUser } from "./actions/currentUser.js"
 import NavBar from './components/NavBar.js'
@@ -17,7 +16,7 @@ import EditOrgFormWrap from './components/EditOrgFormWrap.js'
 import About from './components/About.js'
 import Contact from './components/Contact.js'
 import Footer from './components/Footer.js'
-// import Logout from './components/Login.js'
+// import Logout from './components/Logout.js'
 // import Modal from './components/Modal.js'
 
 
@@ -36,11 +35,11 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
             <Route exact path='/login' component={Login}/>
-            <Route exact path='/organizations/mybiz' component={CenterStage}/>
+            <Route exact path='/organizations/mybiz' container={CenterStage}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/contact' component={Contact}/>
             <Route exact path='/organizations/new' component={NewOrgFormWrap}/>
-            <Route exact path='/organizations/index' component={MainDirectory}/>
+            <Route exact path='/organizations/index' container={MainDirectory}/>
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
               console.log(organization)
@@ -65,7 +64,7 @@ const mapStateToProps = state => {
     loggedIn: !!state.currentUser,
     organizations: state.myOrganizations
   })
-}
+};
 
-// export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
-export default connect((mapStateToProps, { getCurrentUser })(App));
+export default connect(mapStateToProps, { getCurrentUser })(App);
+// export default connect((mapStateToProps, { getCurrentUser })(App));

@@ -25,6 +25,6 @@ const mapStateToProps = ({ currentUser }) => {
     currentUser,
     loggedIn: !!currentUser
   }
-}
+};
 
 export default connect((mapStateToProps)(NavBar));

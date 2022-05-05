@@ -26,6 +26,6 @@ const mapStateToProps = state => {
 	return {
 		organizations: state.organizations
 	}
-}
+};
 
 export default connect((mapStateToProps)(BizIndex));
