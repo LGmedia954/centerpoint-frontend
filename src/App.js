@@ -1,29 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
+// import { Route, Switch, withRouter } from 'react-router-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { getCurrentUser } from "./actions/currentUser.js"
+import { getCurrentUser } from './actions/currentUser.js'
 import NavBar from './components/NavBar.js'
 import Home from './components/Home.js'
 import Login from './components/Login.js'
 import Signup from './components/Signup.js'
 import CenterStage from './containers/CenterStage'
-// import MyOrganizations from './components/MyOrganizations.js'
+import MyOrganizations from './components/MyOrganizations.js'
 import MainDirectory from './containers/MainDirectory'
-// import BizIndex from './components/BizIndex.js'
+import BizIndex from './components/BizIndex.js'
 import BizCard from './components/BizCard.js'
 import NewOrgFormWrap from './components/NewOrgFormWrap.js'
 import EditOrgFormWrap from './components/EditOrgFormWrap.js'
 import About from './components/About.js'
 import Contact from './components/Contact.js'
 import Footer from './components/Footer.js'
-// import Logout from './components/Logout.js'
+import Logout from './components/Logout.js'
 // import Modal from './components/Modal.js'
 
 
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.getCurrentUser()
+    this.props.getCurrentUser();
   }
 
   render(){
@@ -59,12 +60,15 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return ({
+const mapStateToProps = (state) => {
+  return {
     loggedIn: !!state.currentUser,
     organizations: state.myOrganizations
-  })
+  };
 };
 
+// export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
+
+// suggested format via stack overflow
+// export default connect(select, actions)(reduxForm({})(ChangePassword))
 export default connect(mapStateToProps, { getCurrentUser })(App);
-// export default connect((mapStateToProps, { getCurrentUser })(App));

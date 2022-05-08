@@ -29,10 +29,10 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
   )
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     loginFormData: state.loginForm
-  }
+  };
 };
 
 export default connect(mapStateToProps, { updateLoginForm, login } )(Login);

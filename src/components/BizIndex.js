@@ -22,10 +22,10 @@ const BizIndex = ({ organizations }) => {
   )
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		organizations: state.organizations
-	}
+	};
 };
 
 export default connect((mapStateToProps)(BizIndex));

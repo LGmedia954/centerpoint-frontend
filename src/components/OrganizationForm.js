@@ -32,12 +32,12 @@ const OrganizationForm = ({ formData, updateOrganizationForm, userId, organizati
     </form>
   )};
 
-  const mapStateToProps = state => {
+  const mapStateToProps = (state) => {
     const userId = state.currentUser ? state.currentUser.id : ""
     return {
       formData: state.organizationForm,
       userId
-    }
+    };
   };
 
   export default connect(mapStateToProps, { updateOrganizationForm })(OrganizationForm);

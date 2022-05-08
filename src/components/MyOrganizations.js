@@ -10,10 +10,10 @@ const MyOrganizations = props => {
   return bizCards
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     organizations: state.myOrganizations
-  }
+  };
 };
 
 export default connect((mapStateToProps)(MyOrganizations));
