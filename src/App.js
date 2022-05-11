@@ -27,7 +27,7 @@ class App extends React.Component {
     this.props.getCurrentUser();
   }
 
-  render(){
+  render() {
     const { loggedIn, organizations } = this.props
     return (
       <div className="App">
@@ -61,14 +61,16 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    loggedIn: !!state.currentUser,
-    organizations: state.myOrganizations
-  };
+  return (
+    {
+      loggedIn: !!state.currentUser,
+      organizations: state.myOrganizations
+    }
+  );
 };
 
 // export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
 
-// suggested format via stack overflow
+// suggested format via stack overflow (from example)
 // export default connect(select, actions)(reduxForm({})(ChangePassword))
 export default connect(mapStateToProps, { getCurrentUser })(App);

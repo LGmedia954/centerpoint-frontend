@@ -4,6 +4,8 @@ A React project inspired by regional business chambers of commerce and their rel
 
 Backend Repository: https://github.com/LGmedia954/centerpoint-backend
 
+NASA Landsat satellite global mosaic image of Long Island, New York. Public domain. Courtesy: Wikimedia Commons.
+
 # How To Use This Application
 
 To use this app, clone the Front End repository and run npm install to install Node dependencies. Then run npm start.
