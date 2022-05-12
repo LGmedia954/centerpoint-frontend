@@ -1,20 +1,20 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
-import Logout from './Logout'
+import React from 'react';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import Logout from './Logout';
 
 
 const NavBar = ({ currentUser, loggedIn }) => {
   return (
     <div className="nav">
     <h2>CenterPoint Business Hub</h2>
-      <NavLink to="/organizations/index" exact activeClassName="active" >Business Directory | </NavLink>
+      <NavLink to="/organizations" exact activeClassName="active" >Business Directory | </NavLink>
       <NavLink to="/about" exact activeClassName="active" >About | </NavLink>
-      <NavLink to="/organizations/mybiz" exact activeClassName="active" >My Organizations | </NavLink>
-      <NavLink to="/organizations/new" exact activeClassName="active" >Add an Organization </NavLink><br />
+      <NavLink to="/mybiz" exact activeClassName="active" >My Organizations | </NavLink>
+      <NavLink to="/organizations/new" exact activeClassName="active" >Add an Organization | </NavLink>
       <NavLink to="/announcements" exact activeClassName="active" >Announcements | </NavLink>
-      <NavLink to="/announcements/new" exact activeClassName="active" >Add an Announcement | </NavLink>
-      <NavLink to="/contact" exact activeClassName="active" >Contact | </NavLink>
+      <NavLink to="/events" exact activeClassName="active" >Events | </NavLink>
+      <NavLink to="/contact" exact activeClassName="active" >Contact</NavLink>
       { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p><Logout/></> : null}
     </div>
   )

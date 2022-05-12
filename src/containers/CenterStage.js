@@ -10,4 +10,4 @@ const CenterStage = () => {
   )
 }
 
-export default CenterStage
+export default CenterStage;

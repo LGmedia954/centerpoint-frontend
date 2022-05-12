@@ -86,7 +86,6 @@ export const createOrganization = (organizationData, history) => {
           dispatch(addOrganization(resp.data))
           dispatch(resetOrganizationForm())
           history.push(`/organizations/${resp.data.id}`)
-          // show it CenterStage
         }
       })
       .catch(console.log)

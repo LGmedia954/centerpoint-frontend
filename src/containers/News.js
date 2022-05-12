@@ -1,15 +1,13 @@
-import React from 'react'
-import Announcements from '../components/Announcements.js'
-// import Modal from '../components/Modal';
+import React from 'react';
+// import Announcements from '../components/Announcements.js';
+
 
 const News = () => {
   return (
     <div className="containrz">
-      <Announcements />
-
-      {/* <Modal /> */}
+      {/* <Announcements /> */}
     </div>
   )
 }
 
-export default News
+export default News;

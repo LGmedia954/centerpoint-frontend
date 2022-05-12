@@ -1,24 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { Route, Switch, withRouter } from 'react-router-dom'
+// import { Route, Switch, withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { getCurrentUser } from './actions/currentUser.js'
-import NavBar from './components/NavBar.js'
-import Home from './components/Home.js'
-import Login from './components/Login.js'
-import Signup from './components/Signup.js'
-import CenterStage from './containers/CenterStage'
-import MyOrganizations from './components/MyOrganizations.js'
-import MainDirectory from './containers/MainDirectory'
-import BizIndex from './components/BizIndex.js'
-import BizCard from './components/BizCard.js'
-import NewOrgFormWrap from './components/NewOrgFormWrap.js'
-import EditOrgFormWrap from './components/EditOrgFormWrap.js'
-import About from './components/About.js'
-import Contact from './components/Contact.js'
-import Footer from './components/Footer.js'
-import Logout from './components/Logout.js'
-// import Modal from './components/Modal.js'
+import './App.css';
+import { getCurrentUser } from './actions/currentUser.js';
+import NavBar from './components/NavBar.js';
+import Home from './components/Home.js';
+import Login from './components/Login.js';
+import Signup from './components/Signup.js';
+import CenterStage from './containers/CenterStage';
+import DirectoryContainer from './containers/DirectoryContainer';
+import BizCard from './components/BizCard.js';
+import NewOrgFormWrap from './components/NewOrgFormWrap.js';
+import EditOrgFormWrap from './components/EditOrgFormWrap.js';
+import About from './components/About.js';
+import News from './containers/News.js';
+import InviteContainer from './containers/InviteContainer.js';
+import Contact from './components/Contact.js';
+import Footer from './components/Footer.js';
 
 
 class App extends React.Component {
@@ -29,18 +28,21 @@ class App extends React.Component {
 
   render() {
     const { loggedIn, organizations } = this.props
+    // organization={this.props.organization}
     return (
       <div className="App">
         <Router>
-          { loggedIn ? <NavBar organization={this.props.organization}/> : <Home/> }
+          { loggedIn ? <NavBar/> : <Home/> }
           <Switch>
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/organizations/mybiz' container={CenterStage}/>
             <Route exact path='/about' component={About}/>
+            <Route exact path='/announcements' component={News}/>
+            <Route exact path='/events' container={InviteContainer}/>
             <Route exact path='/contact' component={Contact}/>
             <Route exact path='/organizations/new' component={NewOrgFormWrap}/>
-            <Route exact path='/organizations/index' container={MainDirectory}/>
+            <Route exact path='/organizations' container={DirectoryContainer}/>
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
               console.log(organization)
@@ -53,24 +55,19 @@ class App extends React.Component {
             }
           }/>
           </Switch>
+         <Footer />
         </Router>
-        <Footer />
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  return (
-    {
-      loggedIn: !!state.currentUser,
-      organizations: state.myOrganizations
-    }
-  );
+  return {
+    loggedIn: !!state.currentUser,
+    organizations: state.organizations || state.myOrganizations
+  };
 };
 
 // export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
-
-// suggested format via stack overflow (from example)
-// export default connect(select, actions)(reduxForm({})(ChangePassword))
 export default connect(mapStateToProps, { getCurrentUser })(App);
