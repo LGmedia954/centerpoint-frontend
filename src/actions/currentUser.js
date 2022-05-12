@@ -1,7 +1,6 @@
 import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
-import { getMyOrganizations, clearOrganizations } from "./myOrganizations.js"
-import { fetchOrganizations } from "./organizations.js"
+import { fetchOrganizations, getMyOrganizations, clearOrganizations } from "./myOrganizations.js"
 
 export const setCurrentUser = user => {
   return {
@@ -32,7 +31,7 @@ export const login = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(fetchOrganizations()) || dispatch(getMyOrganizations())
+          dispatch(getMyOrganizations()) || dispatch(fetchOrganizations())
           dispatch(resetLoginForm())
           history.push('/')
         }
@@ -60,7 +59,7 @@ export const signup = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(fetchOrganizations()) || dispatch(getMyOrganizations())
+          dispatch(getMyOrganizations()) || dispatch(fetchOrganizations())
           dispatch(resetSignupForm())
           history.push('/')
         }
@@ -95,7 +94,7 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(fetchOrganizations()) || dispatch(getMyOrganizations())
+          dispatch(getMyOrganizations()) || dispatch(fetchOrganizations())
         }
       })
       .catch(console.log)

@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { Route, Switch, withRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
 import { getCurrentUser } from './actions/currentUser.js';
+import './App.css';
 import NavBar from './components/NavBar.js';
 import Home from './components/Home.js';
 import Login from './components/Login.js';
@@ -18,21 +16,22 @@ import News from './containers/News.js';
 import InviteContainer from './containers/InviteContainer.js';
 import Contact from './components/Contact.js';
 import Footer from './components/Footer.js';
+// import { Route, Switch, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.getCurrentUser();
+    this.props.getCurrentUser()
   }
 
-  render() {
+  render(){
     const { loggedIn, organizations } = this.props
-    // organization={this.props.organization}
     return (
       <div className="App">
         <Router>
-          { loggedIn ? <NavBar/> : <Home/> }
+          { loggedIn ? <NavBar organization={this.props.organization}/> : <Home/> }
           <Switch>
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
             <Route exact path='/login' component={Login}/>

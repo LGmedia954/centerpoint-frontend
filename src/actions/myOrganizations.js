@@ -34,6 +34,34 @@ export const updateOrganizationSuccess = organization => {
   }
 }
 
+export const allOrganizations = organizations => {
+  return {
+    type: "INDEX_ORGANIZATIONS",
+    organizations
+  }
+}
+
+export const fetchOrganizations = () => {
+  return dispatch => {
+    return fetch("http://localhost:3000/api/v1/organizations", {
+      credentials: "include",
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+      .then(r => r.json())
+      .then(response => {
+        if (response.error) {
+          alert(response.error)
+        } else {
+          dispatch(allOrganizations(response.data))
+        }
+      })
+      .catch(console.log)
+  }
+}
+
 export const getMyOrganizations = () => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/mybiz", {
@@ -106,7 +134,7 @@ export const updateOrganization = (organizationData, history) => {
       website: organizationData.website,
       category_id: organizationData.categoryId,
     }
-    return fetch(`http://localhost:3000/api/v1/organizations/${organizationData.orgId}`, {
+    return fetch(`http://localhost:3000/api/v1/organizations/${organizationData.organizationId}`, {
       credentials: "include",
       method: "PATCH",
       headers: {

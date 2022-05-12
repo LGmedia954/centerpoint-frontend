@@ -1,8 +1,8 @@
-// const initialState = []
+const initialState = []
 
-const initialState = {
-  organizations: []
-}
+// const initialState = {
+//   organizations: []
+// };
 
 const myOrganizations = (state = initialState, action) => {
   switch (action.type) {
@@ -16,6 +16,8 @@ const myOrganizations = (state = initialState, action) => {
       return state.filter(organization => organization.id === action.organizationId ? false : true)
     case "CLEAR_ORGANIZATIONS":
       return initialState
+    case "INDEX_ORGANIZATIONS":
+      return action.organizations
     default:
       return state
   }
@@ -24,9 +26,13 @@ const myOrganizations = (state = initialState, action) => {
 export default myOrganizations;
 
 
+
 // = (state = initialState, action) => {
 // = (state = null, action) => {
 
+
+
+// const initialState = []
 
 // export default (state = initialState, action) => {
 //   switch (action.type) {
