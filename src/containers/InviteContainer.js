@@ -3,7 +3,7 @@ import Modal from '../components/Modal';
 
 const InviteContainer = () => {
   return (
-    <div className="containrz">
+    <div id="modal">
       <Modal />
     </div>
   )

@@ -31,6 +31,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
+          {/* { loggedIn ? <NavBar user={this.props.currentUser}/> : <Home/> } */}
           { loggedIn ? <NavBar organization={this.props.organization}/> : <Home/> }
           <Switch>
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
@@ -38,7 +39,7 @@ class App extends React.Component {
             <Route exact path='/organizations/mybiz' container={CenterStage}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/announcements' component={News}/>
-            <Route exact path='/events' container={InviteContainer}/>
+            <Route exact path='/invite' container={InviteContainer}/>
             <Route exact path='/contact' component={Contact}/>
             <Route exact path='/organizations/new' component={NewOrgFormWrap}/>
             <Route exact path='/organizations' container={DirectoryContainer}/>

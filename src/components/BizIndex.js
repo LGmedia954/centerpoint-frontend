@@ -28,4 +28,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect((mapStateToProps)(BizIndex));
+export default connect(mapStateToProps)(BizIndex);

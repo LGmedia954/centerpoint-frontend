@@ -16,4 +16,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect((mapStateToProps)(MyOrganizations));
+export default connect(mapStateToProps)(MyOrganizations);

@@ -94,7 +94,8 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(getMyOrganizations()) || dispatch(fetchOrganizations())
+          dispatch(fetchOrganizations())
+          // dispatch(getMyOrganizations()) || dispatch(fetchOrganizations())
         }
       })
       .catch(console.log)

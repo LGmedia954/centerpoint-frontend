@@ -5,17 +5,19 @@ import Logout from './Logout';
 
 
 const NavBar = ({ currentUser, loggedIn }) => {
+  // debugger
   return (
     <div className="nav">
     <h2>CenterPoint Business Hub</h2>
-      <NavLink to="/organizations" exact activeClassName="active" >Business Directory | </NavLink>
       <NavLink to="/about" exact activeClassName="active" >About | </NavLink>
-      <NavLink to="/mybiz" exact activeClassName="active" >My Organizations | </NavLink>
+      <NavLink to="/organizations" exact activeClassName="active" >Business Directory | </NavLink>
       <NavLink to="/organizations/new" exact activeClassName="active" >Add an Organization | </NavLink>
+      <NavLink to="/mybiz" exact activeClassName="active" >My Organizations | </NavLink>
       <NavLink to="/announcements" exact activeClassName="active" >Announcements | </NavLink>
-      <NavLink to="/events" exact activeClassName="active" >Events | </NavLink>
+      <NavLink to="/invite" exact activeClassName="active" >Events | </NavLink>
       <NavLink to="/contact" exact activeClassName="active" >Contact</NavLink>
-      { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p><Logout/></> : null}
+      {/* { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p><Logout/></> : null} */}
+      { loggedIn ? <Logout/>: null}
     </div>
   )
 };
@@ -27,4 +29,4 @@ const mapStateToProps = ({ currentUser }) => {
   };
 };
 
-export default connect((mapStateToProps)(NavBar));
+export default connect(mapStateToProps)(NavBar);
