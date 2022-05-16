@@ -1,6 +1,6 @@
 const initialState = []
 
-const myOrganizations = (state=initialState, action) => {
+const myOrganizations = (state = initialState, action) => {
   switch (action.type) {
     case "SET_MY_ORGANIZATIONS":
       return action.organizations
@@ -12,12 +12,6 @@ const myOrganizations = (state=initialState, action) => {
       return state.filter(organization => organization.id === action.organizationId ? false : true)
     case "CLEAR_ORGANIZATIONS":
       return initialState
-    case "INDEX_ORGANIZATIONS":
-      return {
-        ...state,
-        organizations: action.organizations
-      }
-      // return action.organizations
     default:
       return state
   }

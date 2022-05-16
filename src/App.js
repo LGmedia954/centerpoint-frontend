@@ -8,8 +8,8 @@ import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import CenterStage from './containers/CenterStage';
-import DirectoryContainer from './containers/DirectoryContainer';
-import BizCard from './components/BizCard.js';
+import MainContainer from './containers/MainContainer';
+import BusinessCard from './components/BusinessCard.js';
 import NewOrgFormWrap from './components/NewOrgFormWrap.js';
 import EditOrgFormWrap from './components/EditOrgFormWrap.js';
 import About from './components/About.js';
@@ -38,7 +38,7 @@ class App extends React.Component {
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/organizations/mybiz' container={CenterStage}/>
-            <Route exact path='/organizations' container={DirectoryContainer}/>
+            <Route exact path='/organizations' container={MainContainer}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/announcements' component={News}/>
             <Route exact path='/invite' container={InviteContainer}/>
@@ -47,7 +47,7 @@ class App extends React.Component {
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
               console.log(organization)
-              return <BizCard organization={organization} {...props}/>
+              return <BusinessCard organization={organization} {...props}/>
             }
           }/>
             <Route exact path='/organizations/:id/edit' render={props => {

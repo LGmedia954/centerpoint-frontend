@@ -1,8 +1,8 @@
 // Business Card
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const BizCard = ({ organization }) => {
+const BusinessCard = ({ organization }) => {
   return (
     organization ?
       <div className='ui raised very padded text container segment'>
@@ -17,10 +17,10 @@ const BizCard = ({ organization }) => {
         <br />
         <p>{organization.attributes.mission}</p>
 
-        <Link to={`/organizations/${organization.id}/edit`} className="ui inverted teal button">Edit this organization</Link>
+        <Link to={`/organizations/${organization.id}/edit`} className="ui inverted teal button">Edit</Link>
       </div> :
-      <p>This is a lonely Business Card!</p>
+      <p>This is a lonely Business Card! &#128064;</p>
   )
-};
+}
 
-export default BizCard;
+export default BusinessCard;

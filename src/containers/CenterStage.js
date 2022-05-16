@@ -1,6 +1,6 @@
 // User Businesses
-import React from 'react'
-import MyOrganizations from '../components/MyOrganizations.js'
+import React from 'react';
+import MyOrganizations from '../components/MyOrganizations.js';
 
 const CenterStage = () => {
   return (

@@ -6,7 +6,7 @@ const initialState = {
   password: "",
 }
 
-const signupForm = (state=initialState, action) => {
+const signupForm = (state = initialState, action) => {
   switch (action.type) {
     case "UPDATE_SIGNUP_FORM":
       return action.formData
@@ -23,7 +23,7 @@ export default signupForm;
 
 
 
-// export default (state=initialState, action) => {
+// export default (state = initialState, action) => {
 //   switch (action.type) {
 //     case "UPDATE_SIGNUP_FORM":
 //       return action.formData
