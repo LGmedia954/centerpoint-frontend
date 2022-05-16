@@ -17,7 +17,6 @@ import News from './containers/News.js';
 import InviteContainer from './containers/InviteContainer.js';
 import Contact from './components/Contact.js';
 import Footer from './components/Footer.js';
-import ErrorPage from "./components/ErrorPage";
 // import { Route, Switch, withRouter } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -56,7 +55,6 @@ class App extends React.Component {
               return <EditOrgFormWrap organization={organization} {...props}/>
             }
           }/>
-            <Route component={ErrorPage}/>
           </Switch>
          <Footer />
         </Router>
