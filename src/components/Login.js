@@ -26,7 +26,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
       <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} /><br /><br />
       <input className="ui inverted teal button" type="submit" value="Log In"/>
     </form>
-  );
+  )
 }
 
 const mapStateToProps = (state) => {

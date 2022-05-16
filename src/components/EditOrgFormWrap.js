@@ -1,8 +1,8 @@
 import React from 'react';
-import OrganizationForm from './OrganizationForm'
-import { updateOrganization, deleteOrganization } from '../actions/myOrganizations'
-import { setFormDataForEdit, resetOrganizationForm } from '../actions/organizationForm'
-import { connect } from 'react-redux'
+import OrganizationForm from './OrganizationForm';
+import { updateOrganization, deleteOrganization } from '../actions/myOrganizations';
+import { setFormDataForEdit, resetOrganizationForm } from '../actions/organizationForm';
+import { connect } from 'react-redux';
 
 class EditOrgFormWrap extends React.Component {
   componentDidMount(){
@@ -31,7 +31,7 @@ class EditOrgFormWrap extends React.Component {
     return  <>
               <OrganizationForm editMode handleSubmit={this.handleSubmit} />
               <br/>
-              <button class="ui inverted red button" onClick={()=>deleteOrganization(organizationId, history)}>Delete this organization</button>
+              <button class="ui inverted red button" onClick={()=>deleteOrganization(organizationId, history)}>Delete</button>
             </>
   }
 };

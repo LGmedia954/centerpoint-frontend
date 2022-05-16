@@ -1,7 +1,7 @@
 import React from 'react';
-import OrganizationForm from './OrganizationForm'
-import { createOrganization } from '../actions/myOrganizations'
-import { connect } from 'react-redux'
+import OrganizationForm from './OrganizationForm';
+import { createOrganization } from '../actions/myOrganizations';
+import { connect } from 'react-redux';
 
 const NewOrgFormWrap = ({ history, createOrganization }) => {
 

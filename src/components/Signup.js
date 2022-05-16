@@ -1,7 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { updateSignupForm } from "../actions/signupForm.js"
-import { signup } from "../actions/currentUser.js"
+import React from 'react';
+import { connect } from 'react-redux';
+import { updateSignupForm } from "../actions/signupForm.js";
+import { signup } from "../actions/currentUser.js";
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
 
@@ -28,7 +28,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
       <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleUserDataEntry} /><br /><br />
       <input className="ui inverted teal button" type="submit" value="Sign Up"/>
     </form>
-  );
+  )
 }
 
 const mapStateToProps = (state) => {

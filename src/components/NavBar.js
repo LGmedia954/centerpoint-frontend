@@ -19,13 +19,13 @@ const NavBar = ({ currentUser, loggedIn }) => {
       { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p><Logout/></> : null}
     </div>
   )
-};
+}
 
 const mapStateToProps = ({ currentUser }) => {
   return {
     currentUser,
     loggedIn: !!currentUser
-  };
-};
+  }
+}
 
 export default connect(mapStateToProps)(NavBar);

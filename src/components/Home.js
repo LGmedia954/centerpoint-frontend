@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import LongIsland from './LongIsland'
+import { Link } from 'react-router-dom';
+import LongIsland from './LongIsland';
 
 
 const Home = () => (
