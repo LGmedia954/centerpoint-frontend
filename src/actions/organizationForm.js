@@ -1,3 +1,5 @@
+// sync actions
+
 export const updateOrganizationForm = (name, value) => {
   const formData = { name, value }
   return {

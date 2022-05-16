@@ -1,6 +1,8 @@
 import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
-import { fetchOrganizations, clearOrganizations } from "./myOrganizations.js"
+import { fetchOrganizations, getMyOrganizations, clearOrganizations } from "./myOrganizations.js"
+
+// synchronous action creators
 
 export const setCurrentUser = user => {
   return {
@@ -14,6 +16,8 @@ export const clearCurrentUser = () => {
     type: "CLEAR_CURRENT_USER"
   }
 }
+
+// asynchronous action creators
 
 export const login = (credentials, history) => {
   return dispatch => {
@@ -31,7 +35,7 @@ export const login = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(fetchOrganizations())
+          dispatch(fetchOrganizations()) || dispatch(getMyOrganizations())
           dispatch(resetLoginForm())
           history.push('/')
         }
@@ -94,7 +98,7 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(fetchOrganizations())
+          dispatch(fetchOrganizations()) || dispatch(getMyOrganizations())
         }
       })
       .catch(console.log)

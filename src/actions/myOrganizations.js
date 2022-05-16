@@ -1,5 +1,7 @@
 import { resetOrganizationForm } from './organizationForm'
 
+// synchronous actions
+
 export const setMyOrganizations = organizations => {
   return {
     type: "SET_MY_ORGANIZATIONS",
@@ -40,6 +42,8 @@ export const allOrganizations = organizations => {
     organizations
   }
 }
+
+// async actions
 
 export const fetchOrganizations = () => {
   return dispatch => {
