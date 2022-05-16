@@ -24,9 +24,9 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
     <form onSubmit={handleSubmit}>
       <input placeholder="email" value={loginFormData.email} name="email" type="text" onChange={handleInputChange} /><br /><br />
       <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} /><br /><br />
-      <input className="ui inverted teal button" type="submit" value="Log In"/>
+      <input type="submit" value="Log In" className="ui inverted teal button" />
     </form>
-  )
+  );
 }
 
 const mapStateToProps = (state) => {
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { updateLoginForm, login } )(Login);
+export default connect(mapStateToProps, { updateLoginForm, login })(Login);
