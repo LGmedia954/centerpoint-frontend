@@ -11,13 +11,12 @@ const NavBar = ({ currentUser, loggedIn }) => {
     <h2>CenterPoint Business Hub</h2>
       <NavLink to="/about" exact activeClassName="active" >About | </NavLink>
       <NavLink to="/organizations" exact activeClassName="active" >Business Directory | </NavLink>
+      <NavLink to="/mybiz" exact activeClassName="active" >My Organizations <br /></NavLink>
       <NavLink to="/organizations/new" exact activeClassName="active" >Add an Organization | </NavLink>
-      <NavLink to="/mybiz" exact activeClassName="active" >My Organizations | </NavLink>
       <NavLink to="/announcements" exact activeClassName="active" >Announcements | </NavLink>
       <NavLink to="/invite" exact activeClassName="active" >Events | </NavLink>
-      <NavLink to="/contact" exact activeClassName="active" >Contact</NavLink>
-      {/* { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p><Logout/></> : null} */}
-      { loggedIn ? <Logout/>: null}
+      <NavLink to="/contact" exact activeClassName="active" >Contact</NavLink><br />
+      { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.firstname}</p><Logout/></> : null}
     </div>
   )
 };

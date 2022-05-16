@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getCurrentUser } from './actions/currentUser.js';
 import './App.css';
+import { getCurrentUser } from './actions/currentUser.js';
+import { fetchOrganizations } from './actions/myOrganizations';
 import NavBar from './components/NavBar.js';
 import Home from './components/Home.js';
 import Login from './components/Login.js';
@@ -24,6 +25,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
+    this.props.fetchOrganizations()
   }
 
   render(){
@@ -31,18 +33,17 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          {/* { loggedIn ? <NavBar user={this.props.currentUser}/> : <Home/> } */}
-          { loggedIn ? <NavBar organization={this.props.organization}/> : <Home/> }
+          { loggedIn ? <NavBar/> : <Home/> }
           <Switch>
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/organizations/mybiz' container={CenterStage}/>
+            <Route exact path='/organizations' container={DirectoryContainer}/>
             <Route exact path='/about' component={About}/>
             <Route exact path='/announcements' component={News}/>
             <Route exact path='/invite' container={InviteContainer}/>
             <Route exact path='/contact' component={Contact}/>
             <Route exact path='/organizations/new' component={NewOrgFormWrap}/>
-            <Route exact path='/organizations' container={DirectoryContainer}/>
             <Route exact path='/organizations/:id' render={props => {
               const organization = organizations.find(organization => organization.id === props.match.params.id)
               console.log(organization)
@@ -63,11 +64,11 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
+  return ({
     loggedIn: !!state.currentUser,
-    organizations: state.organizations || state.myOrganizations
-  };
-};
+    organizations: state.organizations
+  })
+}
 
 // export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default connect(mapStateToProps, { getCurrentUser, fetchOrganizations })(App);

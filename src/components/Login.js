@@ -6,7 +6,7 @@ import { login } from "../actions/currentUser.js";
 
 const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target
     const updatedFormInfo = {
       ...loginFormData,
@@ -26,13 +26,13 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
       <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} /><br /><br />
       <input className="ui inverted teal button" type="submit" value="Log In"/>
     </form>
-  )
-};
+  );
+}
 
 const mapStateToProps = (state) => {
   return {
     loginFormData: state.loginForm
-  };
-};
+  }
+}
 
 export default connect(mapStateToProps, { updateLoginForm, login } )(Login);

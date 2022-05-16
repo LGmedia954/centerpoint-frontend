@@ -3,7 +3,7 @@ const initialState = {
   password: ""
 }
 
-const loginForm = (state = initialState, action) => {
+const loginForm = (state=initialState, action) => {
   switch (action.type) {
     case "UPDATE_LOGIN_FORM":
       return action.formData
@@ -15,47 +15,6 @@ const loginForm = (state = initialState, action) => {
 }
 
 export default loginForm;
-
-
-
-
-// const loginForm = (state={email: "", password: ""}, action) => {
-//   switch (action.type) {
-//     case "UPDATE_LOGIN_FORM":
-//       return {
-//         ...state,
-//         formData: action.formData
-//       }
-//     case "RESET_LOGIN_FORM":
-//       return state={email: "", password: ""}
-//     default:
-//       return state
-//   }
-// }
-
-// export default loginForm;
-
-
-
-
-
-// const initialState = {
-//   email: "",
-//   password: ""
-// }
-
-// const loginForm = (state = initialState, action) => {
-//   switch (action.type) {
-//     case "UPDATE_LOGIN_FORM":
-//       return action.formData
-//     case "RESET_LOGIN_FORM":
-//       return initialState
-//     default:
-//       return state
-//   }
-// }
-
-// export default loginForm;
 
 
 

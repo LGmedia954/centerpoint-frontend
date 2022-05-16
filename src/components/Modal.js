@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Modal = (props) => {
+const Modal = () => {
 
   return ReactDOM.createPortal(
     <div className='ui dimmer show modals visible active'>
@@ -9,7 +9,7 @@ const Modal = (props) => {
         <h1>Please join us for First Wednesdays!</h1>
       </div>
     </div>
-    //, document.querySelector('#modal')
+    // , document.querySelector('#modal')
   )
 
 }

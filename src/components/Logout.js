@@ -1,8 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { logout } from "../actions/currentUser.js"
+import React from 'react';
+import { connect } from 'react-redux';
+import { logout } from "../actions/currentUser.js";
 // import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Route } from 'react-router-dom';
 
 
 const Logout = ({ logout, history }) => {
@@ -13,10 +12,10 @@ const Logout = ({ logout, history }) => {
         history.push('/')
       }
     }>
-      <input type="submit" value="Log Out"/>
+      <input className="ui inverted teal button" type="submit" value="Log Out"/>
     </form>
   )
-};
+}
 
 // export default withRouter(connect(null, { logout } )(Logout));
-export default Route(connect(null, { logout } )(Logout));
+export default connect(null, { logout } )(Logout);

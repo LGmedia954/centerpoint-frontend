@@ -5,7 +5,7 @@ import { signup } from "../actions/currentUser.js"
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
 
-  const handleUserDataEntry = event => {
+  const handleUserDataEntry = (event) => {
     const { name, value } = event.target
     const updatedFormInfo = {
       ...signupFormData,
@@ -14,7 +14,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
     updateSignupForm(updatedFormInfo)
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault()
     signup(signupFormData, history)
   }
@@ -28,13 +28,13 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
       <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleUserDataEntry} /><br /><br />
       <input className="ui inverted teal button" type="submit" value="Sign Up"/>
     </form>
-  )
-};
+  );
+}
 
 const mapStateToProps = (state) => {
   return {
     signupFormData: state.signupForm
-  };
-};
+  }
+}
 
 export default connect(mapStateToProps, { updateSignupForm, signup } )(Signup);
