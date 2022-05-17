@@ -1,16 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import './App.css';
+import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js';
 import NavBar from './components/NavBar.js';
 import Home from './components/Home.js';
 import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import CenterStage from './containers/CenterStage';
-import MainContainer from './containers/MainContainer';
 import BusinessCard from './components/BusinessCard.js';
 import NewOrgFormWrap from './components/NewOrgFormWrap.js';
 import EditOrgFormWrap from './components/EditOrgFormWrap.js';
+import MainContainer from './containers/MainContainer';
 import About from './components/About.js';
 import News from './containers/News.js';
 import InviteContainer from './containers/InviteContainer.js';
@@ -31,7 +31,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          { loggedIn ? <NavBar/> : <Home/> }
+          {/* { loggedIn ? <NavBar/> : <Home/> } */}
+          { loggedIn ? <NavBar organization={this.props.organization}/> : <Home/> }
           <Switch>
             <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
             <Route exact path='/login' component={Login}/>
