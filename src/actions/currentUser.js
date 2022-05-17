@@ -36,7 +36,8 @@ export const login = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(fetchOrganizations()) || dispatch(getMyOrganizations())
+          dispatch(fetchOrganizations())
+          dispatch(getMyOrganizations())
           dispatch(resetLoginForm())
           history.push('/')
         }
@@ -101,7 +102,8 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(fetchOrganizations()) || dispatch(getMyOrganizations())
+          dispatch(fetchOrganizations())
+          dispatch(getMyOrganizations())
         }
       })
       .catch(console.log)
