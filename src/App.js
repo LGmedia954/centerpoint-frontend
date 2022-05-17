@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import { getCurrentUser } from './actions/currentUser.js';
-import { fetchOrganizations } from './actions/myOrganizations';
 import NavBar from './components/NavBar.js';
 import Home from './components/Home.js';
 import Login from './components/Login.js';
@@ -25,7 +24,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
-    this.props.fetchOrganizations()
   }
 
   render(){
@@ -71,4 +69,4 @@ const mapStateToProps = (state) => {
 }
 
 // export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
-export default connect(mapStateToProps, { getCurrentUser, fetchOrganizations })(App);
+export default connect(mapStateToProps, { getCurrentUser })(App);

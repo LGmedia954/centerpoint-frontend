@@ -1,19 +1,17 @@
-const users = (state = [], action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
-
-export default users;
-
-
-
-
-
-// export default (state = [], action) => {
+// const users = (state = [], action) => {
 //   switch (action.type) {
 //     default:
 //       return state
 //   }
 // }
+
+// export default users;
+
+
+
+export default (state = [], action) => {
+  switch (action.type) {
+    default:
+      return state
+  }
+}

@@ -47,10 +47,11 @@ export const allOrganizations = organizations => {
 
 export const fetchOrganizations = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/organizations", {
+    return fetch("http://localhost:3001/api/v1/organizations", {
       credentials: "include",
       method: "GET",
       headers: {
+        "Accept": "application/json",
         "Content-Type": "application/json"
       },
     })
@@ -68,10 +69,11 @@ export const fetchOrganizations = () => {
 
 export const getMyOrganizations = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/mybiz", {
+    return fetch("http://localhost:3001/api/v1/mybiz", {
       credentials: "include",
       method: "GET",
       headers: {
+        "Accept": "application/json",
         "Content-Type": "application/json"
       },
     })
@@ -102,10 +104,11 @@ export const createOrganization = (organizationData, history) => {
       category_id: organizationData.categoryId,
       user_id: organizationData.userId
     }
-    return fetch("http://localhost:3000/api/v1/organizations", {
+    return fetch("http://localhost:3001/api/v1/organizations", {
       credentials: "include",
       method: "POST",
       headers: {
+        "Accept": "application/json",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(sendableOrganizationData)
@@ -138,10 +141,11 @@ export const updateOrganization = (organizationData, history) => {
       website: organizationData.website,
       category_id: organizationData.categoryId,
     }
-    return fetch(`http://localhost:3000/api/v1/organizations/${organizationData.organizationId}`, {
+    return fetch(`http://localhost:3001/api/v1/organizations/${organizationData.organizationId}`, {
       credentials: "include",
       method: "PATCH",
       headers: {
+        "Accept": "application/json",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(sendableOrganizationData)
@@ -161,10 +165,11 @@ export const updateOrganization = (organizationData, history) => {
 
 export const deleteOrganization = (organizationId, history) => {
   return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/organizations/${organizationId}`, {
+    return fetch(`http://localhost:3001/api/v1/organizations/${organizationId}`, {
       credentials: "include",
       method: "DELETE",
       headers: {
+        "Accept": "application/json",
         "Content-Type": "application/json"
       }
     })
